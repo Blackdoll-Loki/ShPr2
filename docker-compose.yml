@@ -1,4 +1,4 @@
-name: 'ecom-cms-test'
+name: 'shopify-app'
 
 volumes:
   db-data:
