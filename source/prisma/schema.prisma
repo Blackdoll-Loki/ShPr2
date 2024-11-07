@@ -31,9 +31,34 @@ model Session {
   emailVerified Boolean?  @default(false)
 }
 
-model Shop{
-  id Int @id @default(autoincrement())
-  domain String @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Shop {
+  id        Int       @id             @default(autoincrement())
+  domain    String    @unique
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  syncOrdersTask SyncOrdersTask []
+}
+
+model SyncOrdersTask {
+  id          Int      @id  @default(autoincrement())
+  shopId      Int
+  stage       SyncOrderTaskStage
+  data        Json     @default("{}")
+  retryCount  Int      @default(0)
+  error       String?
+  inProgress   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  shop        Shop     @relation(fields: [shopId], references: [id])
+  @@index([shopId], name: "SyncOrdersTaskShopIdIndex")
+  @@index([stage], name: "SyncOrdersTaskStagedIndex")
+  @@index([inProgress, updatedAt], name: "SyncOrdersTaskInProgressUpdatedAtIndex")
+}
+
+enum SyncOrderTaskStage { 
+  CREATE_BULK_TASK
+  WAIT_FOR_FINISH
+  DOWNLOAD_RESULT
+  PROCESS_RESULT
+  FINISH
 }
