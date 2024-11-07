@@ -3,7 +3,7 @@
 client_id = "e57bb457337ea30ffd1c04ad8aa8a4cb"
 name = "app2"
 handle = "app2-274"
-application_url = "https://incorrect-enables-tribunal-flight.trycloudflare.com"
+application_url = "https://petite-carriers-sheep-revisions.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_customers, read_orders, read_returns"
 
 [auth]
 redirect_urls = [
-  "https://incorrect-enables-tribunal-flight.trycloudflare.com/auth/callback",
-  "https://incorrect-enables-tribunal-flight.trycloudflare.com/auth/shopify/callback",
-  "https://incorrect-enables-tribunal-flight.trycloudflare.com/api/auth/callback"
+  "https://petite-carriers-sheep-revisions.trycloudflare.com/auth/callback",
+  "https://petite-carriers-sheep-revisions.trycloudflare.com/auth/shopify/callback",
+  "https://petite-carriers-sheep-revisions.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
