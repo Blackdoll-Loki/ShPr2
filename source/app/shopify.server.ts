@@ -34,3 +34,24 @@ export const unauthenticated = shopify.unauthenticated;
 export const login = shopify.login;
 export const registerWebhooks = shopify.registerWebhooks;
 export const sessionStorage = shopify.sessionStorage;
+
+export const getAdminContext = async(request: Request): Promise<object> =>{
+  const adminContext = await authenticate.admin(request);
+  const domain = adminContext.session.shop;
+
+  const exist = await prisma.shop.findUnique({
+    where: {
+      domain
+    }
+  })
+
+  if(!exist){
+    await prisma.shop.create({
+      data: {
+        domain
+      }
+    })
+  }
+
+  return adminContext;
+}
