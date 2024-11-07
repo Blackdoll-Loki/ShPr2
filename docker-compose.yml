@@ -20,6 +20,7 @@ services:
       COOKIE_SECRET: ${COOKIE_SECRET}
     volumes:
       - ./source:/app
+      - /home/daria/.config:/home/node/.config
     ports:
       - 3000:3000
     command:
