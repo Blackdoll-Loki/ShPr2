@@ -3,7 +3,7 @@
 client_id = "e57bb457337ea30ffd1c04ad8aa8a4cb"
 name = "app2"
 handle = "app2-274"
-application_url = "https://petite-carriers-sheep-revisions.trycloudflare.com"
+application_url = "https://bristol-operate-first-pittsburgh.trycloudflare.com"
 embedded = true
 
 [build]
@@ -13,13 +13,13 @@ include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customers, read_orders, read_returns"
+scopes = "read_customers,read_orders,read_returns"
 
 [auth]
 redirect_urls = [
-  "https://petite-carriers-sheep-revisions.trycloudflare.com/auth/callback",
-  "https://petite-carriers-sheep-revisions.trycloudflare.com/auth/shopify/callback",
-  "https://petite-carriers-sheep-revisions.trycloudflare.com/api/auth/callback"
+  "https://bristol-operate-first-pittsburgh.trycloudflare.com/auth/callback",
+  "https://bristol-operate-first-pittsburgh.trycloudflare.com/auth/shopify/callback",
+  "https://bristol-operate-first-pittsburgh.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
