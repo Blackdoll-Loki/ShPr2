@@ -1,1 +1,1 @@
-# ecom-cms-test
+# Shopify Theme Extention
